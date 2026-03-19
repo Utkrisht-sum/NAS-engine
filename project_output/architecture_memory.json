@@ -1,0 +1,18 @@
+{
+    "dataset_type": "tabular",
+    "input_shape": [
+        4
+    ],
+    "best_config": {
+        "type": "xgb",
+        "name": "XGBoost",
+        "n_estimators": 300,
+        "learning_rate": 0.01,
+        "max_depth": 3
+    },
+    "performance": {
+        "fitness": 96.66666666666667,
+        "params": 30000,
+        "memory_mb": 50.0
+    }
+}
