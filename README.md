@@ -14,17 +14,17 @@ Designed for maximum stability and generalization, MICRONAS actively monitors th
 
 ## 🎯 Core Features
 
-- **🧠 Dataset-Adaptive Multi-Model Selection**: The system natively evaluates and cross-compares entirely different model families:
+- **Dataset-Adaptive Multi-Model Selection**: The system natively evaluates and cross-compares entirely different model families:
   - *Tabular*: MLPs, Random Forests, XGBoost.
   - *Images*: Small, Medium, and Deep Convolutional Blocks.
   - *Text/Time-Series*: LSTMs, GRUs, Temporal 1D-CNNs.
-- **🛡️ Overfitting & Underfitting Control System**:
+- **Overfitting & Underfitting Control System**:
   - If `train_acc >> val_acc` (> 10%), the Engine actively *increases dropout* and *prunes network layers*.
   - If both accuracies are low, the Engine explicitly mutates the architecture to be deeper/wider and increments training epochs.
-- **📈 Validation-First Proxy Search**: Every candidate architecture is subjected to an ultra-fast, genuine 2-epoch training run. Fitness is calculated purely by actual **validation accuracy** (not training accuracy or zero-cost guesses), ensuring true generalization.
-- **🚀 Advanced Training Pipeline**: Uses `AdamW` (weight decay `1e-4`), `ReduceLROnPlateau` scheduling, Gradient Clipping, Image Augmentation (`RandomHorizontalFlip`, `RandomRotation`), and strict 80/20 deterministic data splits.
-- **🧬 Ensemble Generator**: If two top-performing neural architectures are within 2% validation accuracy of one another at the end of the search, the Engine dynamically packages them into an `EnsembleWrapper` to combine predictions.
-- **📊 Real-Time Visualization & Explainability**: A stunning PySide6 GUI provides live updates of the Training curves, an interactive "Cross-Model Comparison" bar chart (Train vs Val Acc for top candidates), and an explicitly generated `EXPLAINABILITY.md` report detailing *why* the architecture won.
+- **Validation-First Proxy Search**: Every candidate architecture is subjected to an ultra-fast, genuine 2-epoch training run. Fitness is calculated purely by actual **validation accuracy** (not training accuracy or zero-cost guesses), ensuring true generalization.
+- **Advanced Training Pipeline**: Uses `AdamW` (weight decay `1e-4`), `ReduceLROnPlateau` scheduling, Gradient Clipping, Image Augmentation (`RandomHorizontalFlip`, `RandomRotation`), and strict 80/20 deterministic data splits.
+- **Ensemble Generator**: If two top-performing neural architectures are within 2% validation accuracy of one another at the end of the search, the Engine dynamically packages them into an `EnsembleWrapper` to combine predictions.
+- **Real-Time Visualization & Explainability**: A stunning PySide6 GUI provides live updates of the Training curves, an interactive "Cross-Model Comparison" bar chart (Train vs Val Acc for top candidates), and an explicitly generated `EXPLAINABILITY.md` report detailing *why* the architecture won.
 
 ---
 
@@ -75,7 +75,7 @@ Type your goal into the prompt box. The engine parses keywords to adjust the Aut
 - *"Build a highly accurate model / Minimize errors"* -> Unlocks deeper parameter limits, increases base training epochs (3x multiplier), and boosts base dropout for generalization.
 
 ### 3. The Live Pipeline
-Click **🚀 START MICRONAS ENGINE**. You will see:
+Click **START MICRONAS ENGINE**. You will see:
 1. **AI Thinking Log**: Real-time logs of the specific architectures (e.g., `Wide MLP`, `XGBoost`, `Deep CNN`) being built and evaluated.
 2. **Training Loss Chart**: Real-time updates as the current proxy model trains.
 3. **Cross-Model Comparison Graph**: At the end of the search, a bar chart maps the Train vs Val Acc of the top 5 candidates.
