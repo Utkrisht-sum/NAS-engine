@@ -102,7 +102,7 @@ project_output/
 
 ---
 
-## ⚠️ Failsafe Reliability (Hackathon Guarantee)
+## ⚠️ Failsafe Reliability
 MICRONAS is designed around the core principle: **STABILITY > ACCURACY > COMPLEXITY**.
 If an architecture mutates into an invalid shape (e.g. collapsing spatial dimensions) or runs out of GPU memory during the proxy search, the system catches the internal PyTorch crash, explicitly marks the candidate's fitness as `-1`, and cleanly moves to the next architecture. The UI will **never crash**.
 
